@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate{
     
     @IBOutlet weak var collection: UICollectionView!
     
@@ -22,6 +22,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collection.delegate = self
         collection.dataSource = self
         searchBar.delegate = self
@@ -30,7 +31,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         parsePokemonCSV()
         initAudio()
         
+        
+        
     }
+    
+
     
     func initAudio() {
         
@@ -110,6 +115,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        let poke:Pokemon!
+        
+        if inSearchMode {
+            
+            poke = filteredPokemon[indexPath.row]
+            
+            
+        } else {
+            
+            poke = pokemon[indexPath.row]
+        }
+        
+    
+        
+        performSegueWithIdentifier("PokemonDetailVC", sender: poke)
+        
+        
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -167,11 +189,46 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
     }
-
-
-
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PokemonDetailVC" {
+            
+            if let detailsVC = segue.destinationViewController as? PokemonDetailVC {
+                
+                if let poke = sender as? Pokemon {
+                    detailsVC.pokemon = poke
+                    
+                
+        
+                    
+                }
+                
+                
+            }
+            
+                
+                }
+            
+        
+    }
+    
+ 
+    
+    
+       
 }
+
+
+    
+
+    
+
+
+
+
+
+
+
 
 
 
