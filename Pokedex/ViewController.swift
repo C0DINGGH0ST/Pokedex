@@ -198,6 +198,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 if let poke = sender as? Pokemon {
                     detailsVC.pokemon = poke
                     
+                    
                 
         
                     
