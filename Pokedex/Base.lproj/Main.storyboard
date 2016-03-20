@@ -410,12 +410,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="attackLbl" destination="jFe-Zc-rOv" id="FZv-nj-nVk"/>
+                        <outlet property="attackLbl" destination="R9s-yH-QG0" id="Qvd-tw-w90"/>
                         <outlet property="currentEvoImg" destination="Du7-t1-MGt" id="SE6-Gq-Ctu"/>
                         <outlet property="defenseLbl" destination="CfK-EF-mjO" id="Gtg-Vi-vKX"/>
                         <outlet property="descriptionLbl" destination="bhK-rj-ZFQ" id="6wJ-Pv-RJR"/>
                         <outlet property="heightLbl" destination="sL4-7p-TWB" id="23L-88-vfO"/>
                         <outlet property="mainImg" destination="1O5-OK-oEm" id="EwH-y0-e5a"/>
+                        <outlet property="nameLbl" destination="2dC-nd-OXM" id="QFv-0u-1b0"/>
                         <outlet property="nextEvImg" destination="sQs-QO-f7K" id="seo-7h-CzT"/>
                         <outlet property="nextEvLbl" destination="OXa-FS-8c2" id="vHv-ma-nB1"/>
                         <outlet property="pokeIDLbl" destination="Dgg-xc-MIx" id="boO-y1-ZWk"/>
